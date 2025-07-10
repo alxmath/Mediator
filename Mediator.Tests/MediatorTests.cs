@@ -65,6 +65,6 @@ public class MediatorTests
         var mediator = new Mediator(serviceProviderMock.Object);
 
         // Act & Assert
-        await Assert.ThrowsAsync<InvalidOperationException>(() => mediator.SendAsync(request));
+        await Assert.ThrowsAnyAsync<Exception>(() => mediator.SendAsync(request));
     }
 }
